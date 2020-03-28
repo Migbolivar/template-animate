@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web con animaciones</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		@font-face{
+			font-family: ubuntuRegular;
+			src:url(fuentes/Ubuntu-R.ttf) format('trueType');
+		}
+		@font-face{
+			font-family: ubuntuBold;
+			src:url(fuentes/Ubuntu-B.ttf) format('trueType');
+		}
+		@font-face{
+			font-family: ubuntuBoldItalic;
+			src:url(fuentes/Ubuntu-BI.ttf) format('trueType');
+		}
+		@font-face{
+			font-family: ubuntuItalic;
+			src:url(fuentes/Ubuntu-I.ttf) format('trueType');
+		}
+
+		body{
+			font-family: ubuntuRegular;
+			margin: auto;
+			padding: 0px;
+			background: #3c5c6a;
+		}
+		#contenedor{
+			margin: auto;
+			width:80%;
+			border:1px solid black;
+			background: rgba(255,255,255,1);
+			box-shadow: 0px 20px 35px rgba(0,0,0,0.5);
+			-o-box-shadow: 0px 20px 35px rgba(0,0,0,0.5);
+			-moz-box-shadow: 0px 20px 35px rgba(0,0,0,0.5);
+			-webkit-box-shadow: 0px 20px 35px rgba(0,0,0,0.5);
+			border-radius: 15px;
+		}
+		header{
+			background: rgba(255,255,255,0);
+			height: 150px;
+		}
+		#contenido{
+			
+
+		}
+		
+		#etiquetas{
+			
+		}
+		footer{
+			background: rgba(212,184,131,0.5);
+			text-align: center;
+			font-family: ubuntuRegular;
+			font-size: 12px;
+		}
+		#logotipo{
+			font-size: 0px;
+			float: left;
+			position: absolute;
+			margin: 0px;
+			padding: 0px;
+		}
+		#tipo{
+			position: absolute;
+			margin: 0px;
+			padding: 0px;
+			font-size: 60px;
+			color: rgba(255,255,255,1);
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+			font-family: ubuntuBoldItalic;
+			transform: translate(150px,0px);
+			-o-transform: translate(150px,0px);
+			-moz-transform: translate(150px,0px);
+			-webkit-transform: translate(150px,0px);
+		}
+		#logo{
+			float: left;
+			width: 50%;
+			text-align: center;
+			height: 100%;
+			vertical-align: middle;
+			position: absolute;
+			margin: 0px;
+			padding: 0px;
+			animation: late 30s;
+			transform: scale(1,1);
+			animation-iteration-count: infinite;
+		}
+		@keyframes late{
+			0%{transform: scale(1,1);}
+			45%{transform: scale(1,1);}
+			47%{transform: scale(0.98,0.98);}
+			50%{transform: scale(1.02,1.02);}
+			53%{transform: scale(0.98,0.98);}
+			55%{transform: rotate(90deg);(1,1);}
+			100%{transform: scale(1,1);}
+		}
+		#login{
+			padding: 10px;
+			float: right;
+			width: 50%;
+			text-align: right;
+			vertical-align: middle;
+		}
+		input{
+			padding: 5px;
+			font-family: ubuntuRegular;
+			text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+			border: 0px solid white;
+			border-radius: 5px;
+			background: rgba(0,0,0,0.1);
+			box-shadow: inset: 0px 0px 3px rgba(0,0,0,0.2);
+			-webkit-box-shadow: inset: 0px 0px 3px rgba(0,0,0,0.2);
+			-o-box-shadow: inset: 0px 0px 3px rgba(0,0,0,0.2);
+			-moz-box-shadow: inset: 0px 0px 3px rgba(0,0,0,0.2);
+		}
+		a{
+			text-decoration: none;
+		}
+		#registrate{
+			color: rgba(0,0,0,1);
+			font-size: 10px;
+			text-shadow: 0px 0px 5px rgba(183,163,53,1);
+			animation: registrate 2s;
+			animation-iteration-count: infinite;
+
+		}
+
+		@keyframes registrate{
+			0%{text-shadow: 0px 0px 5px rgba(183,163,53,0);}
+			50%{text-shadow: 0px 0px 5px rgba(183,163,53,1);}
+			100%{text-shadow: 0px 0px 5px rgba(183,163,53,0);}
+		}
+		#presentacion{
+			text-align: left;
+			width: 100%;
+			height: 0px;
+			background: rgba(0,0,0,0.3);
+			background: url("img/map.jpg")center center;
+			background-size: 1150px 190px;
+			box-shadow:  inset 0px 0px 35px rgba(255,255,255,1);
+			-o-box-shadow: inset 0px 0px 35px rgba(255,255,255,1);
+			-moz-box-shadow: inset 0px 0px 35px rgba(255,255,255,1);
+			-webkit-box-shadow:  inset 0px 0px 35px rgba(255,255,255,1);
+			animation: esconde 15s;
+
+		}
+		@keyframes esconde{
+			0%{height: 200px;background-size: 1150px 190px;}
+			50%{height: 200px;}
+			100%{height: 0px;background-size: 2300px 380px;}
+		}
+		#animaciontexto1{
+			
+			font-family: ubuntuBold;
+			color: rgba(255,255,255,0);
+			text-shadow: 3px 3px 5px rgba(0,0,0,0);
+			font-size: 32px;
+			transform: translate(150px,0px);
+			animation: muevetexto1 5s;
+		}
+		@keyframes muevetexto1{
+			0%{color: rgba(255,255,255,0);transform: translate(-150px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0);}
+			25%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			50%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			75%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			100%{color: rgba(255,255,255,0);transform: translate(150px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0);}
+		}
+		#animaciontexto2{
+			
+			font-family: ubuntuBold;
+			color: rgba(255,255,255,0);
+			text-shadow: 3px 3px 5px rgba(0,0,0,0);
+			font-size: 32px;
+			transform: translate(150px,0px);
+			animation: muevetexto2 5s;
+			animation-delay: 4s;
+		}
+		@keyframes muevetexto2{
+			0%{color: rgba(255,255,255,0);transform: translate(-150px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0);}
+			25%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			50%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			75%{color: rgba(255,255,255,1);transform: translate(0px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0.3);}
+			100%{color: rgba(255,255,255,0);transform: translate(150px,0px);text-shadow: 3px 3px 5px rgba(0,0,0,0);}
+		}
+		table{
+			width: 48%;
+			float: left;
+			margin: 1%;
+			border: 1px solid rgba(255,255,255,1);
+			border-radius: 10px;
+			background: rgba(212,184,131,0.1);
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			-o-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			transform: scale(1,1);
+			-o-transform: scale(1,1);
+			-webkit-transform: scale(1,1);
+			-moz-transform: scale(1,1);
+			transition: transform 1s;
+			-o-transition: transform 1s;
+			-moz-transition: transform 1s;
+			-webkit-transition: transform 1s;
+		}
+		table:hover{
+			transform: scale(1.1,1.1);
+			-o-transform: scale(1.1,1.1);
+			-webkit-transform: scale(1.1,1.1);
+			-moz-transform: scale(1.1,1.1);
+		}
+		table th{
+			text-align: left;
+			width: 100%;
+			font-family: ubuntuBold;
+			border:1px solid rgba(0,0,0,0.5);
+			border-radius: 10px;
+			background: rgba(212,184,131,0.5);
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			-o-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+		}
+		table td{
+			border: 0px solid white;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+		}
+		#estrellas{
+			float: right;
+			font-size: 12px;
+			font-family: ubuntuRegular;
+		}
+		#trampa{
+			opacity: 0;
+			-o-opacity: 0;
+			-moz-opacity: 0;
+			-webkit-opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<nav id="contenedor">
+		<header>
+			<section id="logotipo">
+				<div id="logo">
+					<img src="img/star.png" height=180px>
+				</div>
+				<div id="tipo">
+					<h1>misFavoritos</h1>
+				</div>
+			</section>
+			<section id="login">
+				<form>
+					<input type="text" name="usuario" value="Usuario" size=20>
+					<input type="text" name="contrasena" value="Contraseña" size=20>
+					<input type="submit">
+				</form>
+				<div id="registrate"><a href="">Pulsa AQUI para registrarte</a></div>
+			</section>
+		</header>
+		<section id="contenido">
+			<section id="presentacion">
+				<div id="animaciontexto1"><h2>¿Cansado de perder tus favoritos?</h2></div>
+				<div id="animaciontexto2"><h2>¿Te gustaría no volver a perderlos?</h2></div>
+			</section>
+			<section id="etiquetas">
+				<table border="1">
+					<tr>
+						<th>Título<span id="estrellas">Valoración</span></th>
+					</tr>
+					<tr>
+						<td>
+							Enlace:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Categoría:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Comentario:
+						</td>
+					</tr>
+				</table>
+				<table border="1">
+					<tr>
+						<th>Título<span id="estrellas">Valoración</span></th>
+					</tr>
+					<tr>
+						<td>
+							Enlace:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Categoría:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Comentario:
+						</td>
+					</tr>
+				</table>
+				<table border="1">
+					<tr>
+						<th>Título<span id="estrellas">Valoración</span></th>
+					</tr>
+					<tr>
+						<td>
+							Enlace:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Categoría:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Comentario:
+						</td>
+					</tr>
+				</table>
+				<table border="1">
+					<tr>
+						<th>Título<span id="estrellas">Valoración</span></th>
+					</tr>
+					<tr>
+						<td>
+							Enlace:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Categoría:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Comentario:
+						</td>
+					</tr>
+				</table>
+			<section id="trampa">
+				-
+			</section>				
+			</section>	
+		</section>
+		<footer>
+			&#169; 2018 - Miguel Angel Bolívar Mella
+		</footer>
+	</nav>
+</body>
+</html>
